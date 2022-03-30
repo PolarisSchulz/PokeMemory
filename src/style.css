@@ -1,0 +1,182 @@
+/* movile first */
+body {
+  margin: 0;
+  padding: 0;
+  /* -webkit-perspective: 1000; */
+
+  /* position: relative; */
+  background-image: url("../img/Background_Memory_Match.png");
+  background-size: cover;
+}
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: aliceblue;
+  font-size: 23px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-image: url("../img/ribbon.png");
+  background-size: cover;
+}
+
+#logo {
+  width: 70%;
+}
+
+/* main {
+  display: flex;
+  align-items: center;
+} */
+
+#pokeMatchCards {
+  max-width: 1000px;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 0;
+}
+
+/* pokeMatchCards-seccion den la linea 25 del HTML donde se colocan las cartas de pokemon */
+/* dashboardCards-Cartas de pokemon donde hacemos que tengan movimiento */
+/* cardsPokemon-Cartas de pokemon, donde hacemos que esten quietas */
+/* backCardPokemon-Donde estan los pokemones */
+/* frontCardPokemon-Donde esta la imagen de la pokebola */
+
+/* Cartas de juego */
+.dashboardCards,
+.cardsPokemon,
+.frontCardPokemon {
+  width: 166px;
+  min-width: 80px;
+  height: 237px;
+}
+
+.cardsPokemon {
+  display: flex;
+  justify-content: space-evenly;
+
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.cardsPokemon.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.cardCommon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.frontCardPokemon {
+  position: absolute;
+  /* background-color: #ae00ff; */
+  /* backface-visibility: hidden; */
+}
+
+.backCardPokemon {
+  position: absolute;
+  background-color: aliceblue;
+  border-radius: 10px;
+
+  transform: rotateY(180deg);
+}
+
+/* Aciertos, tiempo y movimientos */
+.scoreTimeAndFlips {
+  background-color: #976eaa;
+  border-radius: 8px;
+  width: 100%;
+  height: 300px;
+  align-items: center;
+  padding: 1.2em;
+  /* padding-left: 1em; */
+}
+
+.statistics {
+  border: 1px solid white;
+  height: 70px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: #8c5aa3;
+}
+
+/* Boton para recargar el panel de cartas */
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+
+#reload {
+  background-color: #8c5aa3;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.reloadButton {
+  background-image: url("../img/eeveeAndPikachu.png");
+  background-size: cover;
+  text-align: center;
+  height: 90px;
+  border-radius: 10px;
+  padding: 3vh;
+  box-sizing: border-box;
+}
+
+#reload:hover {
+  background-color: black;
+}
+
+/* Area del footer */
+footer {
+  /* background-color: blueviolet; */
+  display: flex;
+  justify-content: center;
+  background-image: url("../img/footer.png");
+  background-size: cover;
+}
+
+.footerCredits {
+  text-align: center;
+  font-family: "Arial";
+  color: beige;
+  font-size: 1em;
+  font-weight: bolder;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.footerCreditsDecoration {
+  text-decoration: none;
+  color: aliceblue;
+  margin-left: 0.5vh;
+}
+
+/* responsive */
+/* @media screen and (min-width: 780px) and (max-width: 1024px) {
+}
+
+@media screen and (min-width: 480px) and (max-width: 780px) {
+}
+
+@media screen and (min-width: 780px) and (max-width: 1024px) {
+} */
