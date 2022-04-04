@@ -27,18 +27,20 @@ const randomPokemon = dataPokemonOriginalAndCopy.sort(() => {
 // cardsPokemon-Cartas de pokemon, donde hacemos que se pegue el lado del frente con el lado de atras y le diga al codigo que es un solo objeto
 // backCardPokemon-Donde estan los pokemones
 // frontCardPokemon-Donde esta la imagen de la pokebola
+
+let pokeId = "";
 let randomnize = "";
 for (let index = 0; index < 18; index++) {
   const print = document.getElementById("pokeMatchCards");
   randomnize += `
-      <div class="dashboardCards">
+    <div class="dashboardCards">
       <div class="cardsPokemon">
-      <div class="cardCommon backCardPokemon">
-      <img src="${randomPokemon[index].image}" <h3>${randomPokemon[index].id}</h3>
-      </div>
-      <div class="cardCommon frontCardPokemon">
-      <img src="../img/pokebolatarjeta-08.png">
-      </div>
+        <div id="${randomPokemon[index].id}" class="cardCommon backCardPokemon">
+          <img src="${randomPokemon[index].image}" <h3>${randomPokemon[index].id}</h3>
+        </div>
+        <div class="cardCommon frontCardPokemon">
+          <img src="../img/pokebolatarjeta-08.png">
+        </div>
       </div>
     </div>`;
 
@@ -50,21 +52,45 @@ for (let index = 0; index < 18; index++) {
 let selectCards = document.getElementsByClassName("cardsPokemon");
 for (const card of selectCards) {
   card.addEventListener("click", function () {
-    card.classList.toggle("is-flipped");
+    // list almacena todos los elementos con la clase is flipped
+    let list = document.getElementsByClassName("is-flipped");
+    if (list.length == 0) {
+      // el elemento if pregunta cuantos elementos hay en esa lista
+      card.classList.toggle("is-flipped");
+      pokeId = card.firstElementChild.id;
+      // poke id almacena el id de la primera carta que se da vuelta
+    } else {
+      if (pokeId == card.firstElementChild.id) {
+        // el siguiente if pregunta si el ID almacenado es igual al ID de la carta actual
+        card.classList.toggle("is-flipped");
+        let element = document.getElementById(pokeId);
+        element.classList.add("fakeFlipped");
+        // intentando hacer los cambios de clase de is flipped a fake flipped
+        document.getElementById(pokeId).classList.add("fakeFlipped");
+        document.getElementById(pokeId).classList.remove("is-flipped");
+
+        element.classList.remove("is-flipped");
+      } else {
+        // aqui la carta activa es distinta a la carta almacenada
+        // esta seccion intenta regresar a la carta para que se vea la pokebola
+        card.classList.toggle("is-flipped");
+        document.getElementById(pokeId).classList.toggle("is-flipped");
+      }
+    }
   });
 }
 
 // Resetear juego
 // Sort arregla los elementos de un array dependiendo del criterio que nosotros querramos aplicar
 // to string, convierte un objeto en un string, por ejemplo un numero dentro de un array
-function resetGame() {
-  card.sort(function () {
-    return Math.random() - 0.5;
-  });
+// function resetGame() {
+//   card.sort(function () {
+//     return Math.random() - 0.5;
+//   });
 
-  for (var index = 0; index < 18; index++) {
-    let card = card[index].id;
-    let dato = document.getElementById(index.toString());
-    dato.dataset.valor = carta;
-  }
-}
+//   for (var index = 0; index < 18; index++) {
+//     let card = card[index].id;
+//     let dato = document.getElementById(index.toString());
+//     dato.dataset.valor = carta;
+//   }
+// }

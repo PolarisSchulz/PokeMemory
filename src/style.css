@@ -74,6 +74,10 @@ header {
   transform: rotateY(180deg);
 }
 
+.cardsPokemon.fakeFlipped {
+  transform: rotateY(180deg);
+}
+
 .cardCommon {
   position: absolute;
   width: 100%;
@@ -183,9 +187,7 @@ footer {
 /* responsive */
 /* @media screen and (min-width: 780px) and (max-width: 1024px) {
 }
-
 @media screen and (min-width: 480px) and (max-width: 780px) {
 }
-
 @media screen and (min-width: 780px) and (max-width: 1024px) {
 } */
