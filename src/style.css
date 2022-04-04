@@ -34,6 +34,8 @@ header {
 
 #pokeMatchCards {
   max-width: 1000px;
+  margin-left: 30%;
+  margin-right: 25%;
   padding: 1em;
   display: flex;
   flex-direction: row;
@@ -60,7 +62,6 @@ header {
 .cardsPokemon {
   display: flex;
   justify-content: space-evenly;
-
   width: 100%;
   height: 100%;
   transition: transform 1s;
@@ -90,9 +91,9 @@ header {
 
 .backCardPokemon {
   position: absolute;
+
   background-color: aliceblue;
   border-radius: 10px;
-
   transform: rotateY(180deg);
 }
 
@@ -100,11 +101,12 @@ header {
 .scoreTimeAndFlips {
   background-color: #976eaa;
   border-radius: 8px;
-  width: 100%;
+  width: 80%;
   height: 300px;
   align-items: center;
   padding: 1.2em;
-  /* padding-left: 1em; */
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
 .statistics {
@@ -118,12 +120,14 @@ header {
 }
 
 /* Boton para recargar el panel de cartas */
+/* este es del icono que da vueltitas */
 .fa {
   margin-left: -12px;
   margin-right: 8px;
 }
 
-#reload {
+/* Esto es del boton de las nuevas cartas */
+#reseatGame {
   background-color: #8c5aa3;
   border: none;
   color: white;
@@ -132,6 +136,11 @@ header {
   border-radius: 10px;
 }
 
+#reseatGame:hover {
+  background-color: rgb(43, 151, 103);
+}
+
+/* esto de la seccion del boton para colocar nuevas cartas, aca de fondo se adapta la imagen de pikachu y de eevee */
 .reloadButton {
   background-image: url("../img/eeveeAndPikachu.png");
   background-size: cover;
@@ -142,9 +151,9 @@ header {
   box-sizing: border-box;
 }
 
-#reload:hover {
-  background-color: black;
-}
+
+
+
 
 /* Area del footer */
 footer {
