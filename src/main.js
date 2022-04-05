@@ -21,6 +21,8 @@ const randomPokemon = dataPokemonOriginalAndCopy.sort(() => {
   return Math.random() - 0.5;
 });
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
 // Para imprimir la data en el DOM
 // pokeMatchCards-seccion den la linea 25 del HTML donde se colocan las cartas de pokemon
 // dashboardCards-Cartas de pokemon donde vamos a hacer que tengan movimiento
@@ -34,14 +36,12 @@ for (let index = 0; index < 18; index++) {
   randomnize += `
     <div class="dashboardCards">
       <div class="cardsPokemon">
-        <div id="${index}" class="cardCommon  ${randomPokemon[index].id}" >
-
-          <img class="backCardPokemon" src="${randomPokemon[index].image}" <h3>${randomPokemon[index].id}</h3>
-          <img class="frontCardPokemon" src="../img/pokebolatarjeta-08.png">
+        <div id="${index}" class="cardCommon backCardPokemon ${randomPokemon[index].id}" >
+          <img src="${randomPokemon[index].image}" <h3>${randomPokemon[index].id}</h3>
         </div>
-
-
-
+        <div class="cardCommon frontCardPokemon ${randomPokemon[index].id}">
+          <img src="../img/pokebolatarjeta-08.png">
+        </div>
       </div>
     </div>`;
 
@@ -60,7 +60,7 @@ let firstPokemon = null;
 let secondPokemon = null;
 let score = 0;
 
-// variable para apuntar en el HTML el lugar que se esta ocupando los flips y score linea 36 y 38
+// variable para apuntar en el HTML el lugar que se esta insertando los flips y score linea 36 y 38
 let showFlips = document.getElementById("flips");
 let showScore = document.getElementById("score");
 
@@ -92,13 +92,16 @@ for (const card of selectCards) {
           score++;
           showScore.innerHTML = `Aciertos: ${score}`;
         } else {
-          // pokeId1.classList.toggle("is-flipped");
-          // pokeId2.classList.toggle("is-flipped");
+          setTimeout(() => {
+            pokeId1.parentNode.classList.remove("is-flipped");
+            pokeId2.parentNode.classList.remove("is-flipped");
+          }, 2000);
 
+          console.log(pokeId2);
           pokeId1.disabled = false;
           pokeId2.disabled = false;
-          pokeId1.classList.add("is-flipped");
-          pokeId2.classList.add("is-flipped");
+          eventFire(pokeId1, "click");
+          eventFire(pokeId2, "click");
 
           flippedCards = 0;
         }
@@ -107,7 +110,34 @@ for (const card of selectCards) {
   });
 }
 
+function eventFire(el, etype) {
+  if (el.fireEvent) {
+    el.fireEvent("on" + etype);
+  } else {
+    var evObj = document.createEvent("Events");
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
 // Resetear juego
+// Sort arregla los elementos de un array dependiendo del criterio que nosotros querramos aplicar
+// to string, convierte un objeto en un string, por ejemplo un numero dentro de un array
+// function resetGame() {
+//   card.sort(function () {
+//     return Math.random() - 0.5;
+//   });
+
+//   for (var index = 0; index < 18; index++) {
+//     let card = card[index].id;
+//     let dato = document.getElementById(index.toString());
+//     dato.dataset.valor = carta;
+//   }
+// }
+
+// Reset juego
 // Sort arregla los elementos de un array dependiendo del criterio que nosotros querramos aplicar
 // to string, convierte un objeto en un string, por ejemplo un numero dentro de un array
 // function resetGame() {
