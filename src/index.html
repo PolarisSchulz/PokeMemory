@@ -22,8 +22,14 @@
 
 
 
+
+
+
     <!--Acá se visualizan los pokemones, esta es la parte más importante, donde se enlazan las cartas-->
-    <div id="pokeMatchCards"></div>
+
+    <section class="fatherPokeMatchCards">
+      <div id="pokeMatchCards"></div>
+    </section>
 
 
 
@@ -32,24 +38,26 @@
 
 
     <!-- Seccion de scores -->
-    <div class="scoreTimeAndFlips">
-      <h2 id="score" class="statistics">Aciertos: 0</h2>
-      <h2 id="time" class="statistics">Tiempo: 30 segundos</h2>
-      <h2 id="flips" class="statistics">Movimientos: 0</h2>
-    </div>
+    <section class="fatherScoreTimeAndFlips">
+      <div class="scoreTimeAndFlips">
+        <!-- <h2 id="time" class="statistics">Tiempo: segundos</h2> -->
+        <h2 id="score" class="statistics">Aciertos: 0</h2>
+        <h2 id="flips" class="statistics">Movimientos: 0</h2>
+      </div>
+    </section>
 
 
     <!-- Botton nuevo juego -->
 
-    <div class="reloadButton">
-      <input type="button" id="reseatGame" value="Reiniciar Juego" onclick="newDashboard()" />
-    </div>
+    <!-- <div class="reloadButton">
+      <input type="button" id="reseatGame" value="Reiniciar Juego" onclick="refreshGame()" />
+    </div> -->
 
-    <!-- <section>
+    <section class="fatherReloadButton">
       <div class="reloadButton">
-        <button onclick="newDashboard" id="reload"> <i class="fa fa-refresh fa-spin"> </i> Nuevo Juego </button>
+        <button id="reseatGame" onclick=""> <i class="fa fa-refresh fa-spin"> </i> Nuevo Juego </button>
       </div>
-    </section> -->
+    </section>
 
   </main>
 

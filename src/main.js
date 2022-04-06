@@ -58,16 +58,37 @@ let pokeId2 = null;
 let firstPokemon = null;
 let secondPokemon = null;
 
-let score = 0;
-let flips = 0;
+// variables extras para mostrar el score, flips y el timer
+let score = 0; //aciertos
+let flips = 0; //movimientos
+// let tellTime = false; //decir el tiempo
+// let seconds = 3;
+// let countdownTimeId = null; //tiempo regresivo (para que no se vaya a numeros negativos el contador)
 
 // variable para apuntar en el HTML el lugar que se esta insertando los flips y score linea 36 y 38
+// let seeTimer = document.getElementById("time");
 let showFlips = document.getElementById("flips");
 let showScore = document.getElementById("score");
+let selectCards = document.getElementsByClassName("cardsPokemon"); //variable principal del ciclo for y para hacer el refres, que sale del bloque donde se unen las cartas de la linea 38
 
-let selectCards = document.getElementsByClassName("cardsPokemon");
 for (const card of selectCards) {
   card.addEventListener("click", function () {
+    // if (tellTime == false) {
+    //   countTime();
+    //   tellTime = true;
+    // }
+
+    // function countTime() {
+    //   countdownTimeId ==
+    //     setInterval(() => {
+    //       tellTime--;
+    //       seeTimer.innerHTML = `Tiempo: ${seconds} segundos`;
+    //       if (timer == 0) {
+    //         clearInterval(countdownTimeId);
+    //       }
+    //     }, 1000);
+    // }
+
     // list almacena todos los elementos con la clase is flipped
     flippedCards++; // vamos a sumar en el contador de tarjetas 1
     if (flippedCards == 1) {
@@ -123,32 +144,15 @@ function eventFire(el, etype) {
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
+// Resetear el juego
+// let boxCardsPokemonReload = "cardsPokemon";
+// document.getElementById("reseatGame").innerHTML = boxCardsPokemonReload;
+
 // Resetear juego
 // Sort arregla los elementos de un array dependiendo del criterio que nosotros querramos aplicar
 // to string, convierte un objeto en un string, por ejemplo un numero dentro de un array
-// function resetGame() {
+
+// function reseatGame() {
 //   card.sort(function () {
 //     return Math.random() - 0.5;
 //   });
-
-//   for (var index = 0; index < 18; index++) {
-//     let card = card[index].id;
-//     let dato = document.getElementById(index.toString());
-//     dato.dataset.valor = carta;
-//   }
-// }
-
-// Reset juego
-// Sort arregla los elementos de un array dependiendo del criterio que nosotros querramos aplicar
-// to string, convierte un objeto en un string, por ejemplo un numero dentro de un array
-// function resetGame() {
-//   card.sort(function () {
-//     return Math.random() - 0.5;
-//   });
-
-//   for (var index = 0; index < 18; index++) {
-//     let card = card[index].id;
-//     let dato = document.getElementById(index.toString());
-//     dato.dataset.valor = carta;
-//   }
-// }
