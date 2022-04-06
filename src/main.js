@@ -55,10 +55,11 @@ for (let index = 0; index < 18; index++) {
 let flippedCards = null;
 let pokeId1 = null;
 let pokeId2 = null;
-let flips = 0;
 let firstPokemon = null;
 let secondPokemon = null;
+
 let score = 0;
+let flips = 0;
 
 // variable para apuntar en el HTML el lugar que se esta insertando los flips y score linea 36 y 38
 let showFlips = document.getElementById("flips");
@@ -68,14 +69,14 @@ let selectCards = document.getElementsByClassName("cardsPokemon");
 for (const card of selectCards) {
   card.addEventListener("click", function () {
     // list almacena todos los elementos con la clase is flipped
-    flippedCards++;
+    flippedCards++; // vamos a sumar en el contador de tarjetas 1
     if (flippedCards == 1) {
-      // el elemento if pregunta cuantos elementos hay en esa lista
-      card.classList.toggle("is-flipped");
-      pokeId1 = document.getElementById(card.firstElementChild.id);
-      firstPokemon = card.firstElementChild.innerText;
-      pokeId1.disabled = true;
-      // pokeId1 almacena el id de la primera carta que se da vuelta
+      // Este elemento bloque if pregunta cuantos elementos hay en esa lista tomara el dato de la primera tarjeta
+
+      card.classList.toggle("is-flipped"); // Esta linea hace que de vuelta la carta
+      pokeId1 = document.getElementById(card.firstElementChild.id); // pokeId1 almacena la informacion del nuego id renombrado (linea 39 de main.js), que ahora es un numero de la primera carta que se da vuelta
+      firstPokemon = card.firstElementChild.innerText; // Esta linea va obtener la informacion que a futuro vamos a comparar con la siguiente tarjeta por el texto de innerText donde se encuentra almacenado el nodo de la data, ej. va a comparar lo siguiente { id: 'bulbasaur', image: 'https://www.serebii.net/pokemongo/pokemon/001.png', bgColor: '#339933' }, todo el texto, no el id por que lo estamos renombrando en la linea 39 id="${index}" ya que el id debe ser unico, y al ser dos arrays que salen de la misma data, no estabamos obteniendo un id unico
+      pokeId1.disabled = true; //
     } else {
       if (flippedCards == 2) {
         // el siguiente if pregunta si el ID almacenado es igual al ID de la carta actual
@@ -95,9 +96,8 @@ for (const card of selectCards) {
           setTimeout(() => {
             pokeId1.parentNode.classList.remove("is-flipped");
             pokeId2.parentNode.classList.remove("is-flipped");
-          }, 2000);
+          }, 1000);
 
-          console.log(pokeId2);
           pokeId1.disabled = false;
           pokeId2.disabled = false;
           eventFire(pokeId1, "click");
@@ -110,6 +110,7 @@ for (const card of selectCards) {
   });
 }
 
+// esto hace que el e
 function eventFire(el, etype) {
   if (el.fireEvent) {
     el.fireEvent("on" + etype);
