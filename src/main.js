@@ -29,6 +29,8 @@ const randomPokemon = dataPokemonOriginalAndCopy.sort(() => {
 // cardsPokemon-Cartas de pokemon, donde hacemos que se pegue el lado del frente con el lado de atras y le diga al codigo que es un solo objeto
 // backCardPokemon-Donde estan los pokemones
 // frontCardPokemon-Donde esta la imagen de la pokebola
+// id="imgPokemones" adecta a todos mis pokemones en css solamente (aqui no son los pokemones renombrados)
+// id="typeTextPokemon" detecta el nombre de los pokemones en css solamente (aqui no son los pokemones renombrados)
 
 let randomnize = "";
 for (let index = 0; index < 18; index++) {
@@ -37,7 +39,7 @@ for (let index = 0; index < 18; index++) {
     <div class="dashboardCards">
       <div class="cardsPokemon">
         <div id="${index}" class="cardCommon backCardPokemon ${randomPokemon[index].id}" >
-          <img src="${randomPokemon[index].image}" <h3>${randomPokemon[index].id}</h3>
+          <img id="imgPokemones" src="${randomPokemon[index].image}" <h3 id="typeTextPokemon"> ${randomPokemon[index].id} </h3>
         </div>
         <div class="cardCommon frontCardPokemon ${randomPokemon[index].id}">
           <img src="../img/pokebolatarjeta-08.png">
