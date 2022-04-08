@@ -10,7 +10,7 @@ body {
 }
 
 h2 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-weight: bold;
   text-align: center;
   color: aliceblue;
@@ -54,11 +54,6 @@ justify-content: center;
   flex-wrap: wrap;
   justify-content: space-around;
   flex-grow: 0;
-  /* background-color: #ffffff;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.40);
-  backdrop-filter:blur (20px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.20); */
   margin-top: 1vw;
   margin-bottom: 1vw;
 
@@ -214,6 +209,8 @@ text-align: center;
   font-size: 24px;
   border-radius: 10px;
   text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
 }
 
 #reseatGame:hover {
@@ -247,16 +244,147 @@ footer {
   margin-left: 0.5vh;
 }
 
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
 /* Para que se adapte a diferentes display */
-@media screen and (min-width: 780px) and (max-width: 1024px) {
+@media screen and (min-width: 390px) and (max-width: 926px) {
 
+  #logo {
+    width: 95vw;
+  }
 
+  .namePokemon {
+    font-size: 20px;
+  }
+
+  #pokeMatchCards {
+    max-width: 90vw;
+  }
+
+  #imgPokemones{
+  width: 95%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .scoreTimeAndFlips {
+    width: 64%;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .fatherReloadButton{
+    padding: 2vw;
+  }
+
+  .reloadButton {
+    padding: 2vh;
+    box-sizing: border-box;
+  }
+
+  #reseatGame {
+    font-size: 23px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+  }
 }
-@media screen and (min-width: 480px) and (max-width: 780px) {
 
 
+
+@media screen and (min-width: 834px) and (max-width: 1194px) {
+
+
+  #logo {
+    width: 95vw;
+  }
+
+  .namePokemon {
+    font-size: 20px;
+  }
+
+  #pokeMatchCards {
+    max-width: 90vw;
+  }
+
+  #imgPokemones{
+  width: 95%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .scoreTimeAndFlips {
+    width: 64%;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .fatherReloadButton{
+    background-size: 100%;
+  }
+
+  .reloadButton {
+    padding: 2vh;
+    box-sizing: border-box;
+  }
+
+  #reseatGame {
+    font-size: 21px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+  }
 }
-@media screen and (min-width: 780px) and (max-width: 1024px) {
 
 
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+
+  #logo {
+    width: 70vw;
+  }
+
+  .namePokemon {
+    font-size: 20px;
+  }
+
+  #pokeMatchCards {
+    max-width: 90vw;
+  }
+
+  #imgPokemones{
+  width: 95%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .scoreTimeAndFlips {
+    width: 64%;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .fatherReloadButton{
+    background-size: 70%;
+  }
+
+  .reloadButton {
+    padding: 3vh;
+    box-sizing: border-box;
+  }
+
+  #reseatGame {
+    font-size: 21px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+  }
 }
+
