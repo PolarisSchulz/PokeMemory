@@ -30,16 +30,18 @@ const randomPokemon = dataPokemonOriginalAndCopy.sort(() => {
 // backCardPokemon-Donde estan los pokemones
 // frontCardPokemon-Donde esta la imagen de la pokebola
 // id="imgPokemones" adecta a todos mis pokemones en css solamente (aqui no son los pokemones renombrados)
-// id="typeTextPokemon" detecta el nombre de los pokemones en css solamente (aqui no son los pokemones renombrados)
+// class="center" detecta el nombre de los pokemones en css solamente (aqui no son los pokemones renombrados)
 
 let randomnize = "";
 for (let index = 0; index < 18; index++) {
   const print = document.getElementById("pokeMatchCards");
+  let name = randomPokemon[index].id;
   randomnize += `
     <div class="dashboardCards">
       <div class="cardsPokemon">
         <div id="${index}" class="cardCommon backCardPokemon ${randomPokemon[index].id}" >
-          <img id="imgPokemones" src="${randomPokemon[index].image}" <h3 id="typeTextPokemon"> ${randomPokemon[index].id} </h3>
+          <img id="imgPokemones" src="${randomPokemon[index].image}" ${randomPokemon[index].id} >
+          <p class="namePokemon">${name}</p>
         </div>
         <div class="cardCommon frontCardPokemon ${randomPokemon[index].id}">
           <img src="../img/pokebolatarjeta-08.png">
@@ -75,22 +77,6 @@ let selectCards = document.getElementsByClassName("cardsPokemon"); //variable pr
 
 for (const card of selectCards) {
   card.addEventListener("click", function () {
-    // if (tellTime == false) {
-    //   countTime();
-    //   tellTime = true;
-    // }
-
-    // function countTime() {
-    //   countdownTimeId ==
-    //     setInterval(() => {
-    //       tellTime--;
-    //       seeTimer.innerHTML = `Tiempo: ${seconds} segundos`;
-    //       if (timer == 0) {
-    //         clearInterval(countdownTimeId);
-    //       }
-    //     }, 1000);
-    // }
-
     // list almacena todos los elementos con la clase is flipped
     flippedCards++; // vamos a sumar en el contador de tarjetas 1
     if (flippedCards == 1) {
@@ -111,6 +97,7 @@ for (const card of selectCards) {
         showFlips.innerHTML = `Movimientos: ${flips}`;
 
         if (firstPokemon === secondPokemon) {
+          // el siguiente if pregunta si el ID almacenado es igual al ID de la carta actual
           flippedCards = 0;
 
           score++;
