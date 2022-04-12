@@ -1,0 +1,390 @@
+/* movile first */
+body {
+  margin: 0;
+  padding: 0;
+  /* -webkit-perspective: 1000; */
+
+  /* position: relative; */
+  background-image: url("../img/Background_Memory_Match.png");
+  background-size: cover;
+}
+
+h2 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: aliceblue;
+  font-size: 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-image: url("../img/ribbon.png");
+  background-size: cover;
+}
+
+#logo {
+  width: 40vw;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+.fatherPokeMatchCards{
+display: flex;
+justify-content: center;
+}
+
+.namePokemon {
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-transform: full-width;
+}
+
+#pokeMatchCards {
+  max-width: 40vw;
+  padding: 2vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-grow: 0;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* pokeMatchCards-seccion den la linea 25 del HTML donde se colocan las cartas de pokemon */
+/* dashboardCards-Cartas de pokemon donde hacemos que tengan movimiento */
+/* cardsPokemon-Cartas de pokemon, donde hacemos que esten quietas */
+/* backCardPokemon-Donde estan los pokemones */
+/* frontCardPokemon-Donde esta la imagen de la pokebola */
+
+/* Cartas de juego */
+.dashboardCards,
+.cardsPokemon,
+.frontCardPokemon {
+  width: 166px;
+  min-width: 80px;
+  height: 237px;
+}
+
+.cardsPokemon {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 5px 10px 0 rgba(62, 62, 62, 0.3);
+  backdrop-filter:blur (20px);
+  border-radius: 10px;
+
+}
+
+.cardsPokemon.is-flipped {
+  transform: rotateY(180deg);
+
+}
+
+.cardCommon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.frontCardPokemon {
+  position: absolute;
+  /* background-color: #ae00ff; */
+  /* backface-visibility: hidden; */
+}
+
+
+/* donde se muestran los pokemones al frente */
+.backCardPokemon {
+  position: absolute;
+  background-color: rgba(255, 255, 255);
+  border-radius: 10px;
+  transform: rotateY(180deg);
+
+}
+
+#imgPokemones{
+display: flex;
+align-content: center;
+width: 85%;
+padding-top: 1vw;
+padding-bottom: 1vw;
+padding-left: 0.5vw;
+padding-right: 0.5vw;
+}
+
+#typeTextPokemon{
+text-align: center;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+.fatherScoreTimeAndFlips{
+  display: flex;
+  justify-content: center;
+}
+
+/* Aciertos, tiempo(ya no) y movimientos */
+.scoreTimeAndFlips {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #976eaa;
+  border-radius: 8px;
+  width: 50%;
+  height: 200px;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1.7em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.statistics {
+  border: 1px solid white;
+  height: 70px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: #8c5aa3;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+.fatherReloadButton{
+  display: flex;
+  justify-content: center;
+  padding: 3vw;
+  background-image: url("../img/eeveeAndPikachu.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* esto de la seccion del boton para colocar nuevas cartas */
+.reloadButton {
+  padding: 2vh;
+  box-sizing: border-box;
+}
+
+/* Boton para recargar el panel de cartas */
+/* este es del icono que da vueltitas */
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+
+/* Esto es del boton de las nuevas cartas */
+#reseatGame {
+  background-color: #8c5aa3;
+  border: none;
+  color: white;
+  padding: 24px 100px 24px 100px;
+  font-size: 24px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+}
+
+#reseatGame:hover {
+  background-color: #46a990;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Area del footer */
+footer {
+  /* background-color: blueviolet; */
+  display: flex;
+  justify-content: center;
+  background-image: url("../img/footer.png");
+  background-size: cover;
+}
+
+.footerCredits {
+  text-align: center;
+  font-family: "Arial";
+  color: beige;
+  font-size: 1em;
+  font-weight: bolder;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.footerCreditsDecoration {
+  text-decoration: none;
+  color: aliceblue;
+  margin-left: 0.5vh;
+}
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* Para que se adapte a diferentes display */
+@media screen and (min-width: 390px) and (max-width: 926px) {
+
+  #logo {
+    width: 95vw;
+  }
+
+  .namePokemon {
+    font-size: 20px;
+  }
+
+  #pokeMatchCards {
+    max-width: 90vw;
+  }
+
+  #imgPokemones{
+  width: 95%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .scoreTimeAndFlips {
+    width: 64%;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .fatherReloadButton{
+    padding: 2vw;
+  }
+
+  .reloadButton {
+    padding: 2vh;
+    box-sizing: border-box;
+  }
+
+  #reseatGame {
+    font-size: 23px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+  }
+}
+
+
+
+@media screen and (min-width: 834px) and (max-width: 1194px) {
+
+
+  #logo {
+    width: 95vw;
+  }
+
+  .namePokemon {
+    font-size: 20px;
+  }
+
+  #pokeMatchCards {
+    max-width: 90vw;
+  }
+
+  #imgPokemones{
+  width: 95%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .scoreTimeAndFlips {
+    width: 64%;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .fatherReloadButton{
+    background-size: 100%;
+  }
+
+  .reloadButton {
+    padding: 2vh;
+    box-sizing: border-box;
+  }
+
+  #reseatGame {
+    font-size: 21px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+  }
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+
+  #logo {
+    width: 70vw;
+  }
+
+  .namePokemon {
+    font-size: 20px;
+  }
+
+  #pokeMatchCards {
+    max-width: 90vw;
+  }
+
+  #imgPokemones{
+  width: 95%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .scoreTimeAndFlips {
+    width: 64%;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .fatherReloadButton{
+    background-size: 70%;
+  }
+
+  .reloadButton {
+    padding: 3vh;
+    box-sizing: border-box;
+  }
+
+  #reseatGame {
+    font-size: 21px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+  }
+}
+

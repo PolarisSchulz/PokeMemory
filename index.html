@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokeMemory</title>
+  <link rel="shortcut icon" href="/img/favicon.png.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+
+<body>
+  <!-- Header,  logo pikachu y cortinillas verdes-->
+
+  <header>
+    <img id="logo" src="../img/pokememory_logo.png">
+  </header>
+
+  <main>
+
+
+
+
+
+
+    <!--Acá se visualizan los pokemones, esta es la parte más importante, donde se enlazan las cartas-->
+
+    <section class="fatherPokeMatchCards">
+      <div id="pokeMatchCards"></div>
+    </section>
+
+
+
+
+
+
+
+    <!-- Seccion de scores -->
+    <section class="fatherScoreTimeAndFlips">
+      <div class="scoreTimeAndFlips">
+        <!-- <h2 id="time" class="statistics">Tiempo: segundos</h2> -->
+        <h2 id="score" class="statistics">Aciertos: 0</h2>
+        <h2 id="flips" class="statistics">Movimientos: 0</h2>
+      </div>
+    </section>
+
+
+    <!-- Botton nuevo juego -->
+
+    <section class="fatherReloadButton">
+      <div class="reloadButton">
+        <button id="reseatGame" onclick="location.href = location.href"> <i class="fa fa-refresh fa-spin"> </i> Nuevo
+          Juego </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <!-- creditos del minijuego -->
+    <div class="footerCredits">
+      Minijuego programado por
+      <a class=" footerCreditsDecoration" href="https://github.com/PolarisSchulz" target="_blank"
+        rel="noopener noreferrer">
+        Abigail Pena</a>
+    </div>
+  </footer>
+
+  <div id="root"></div>
+
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>
