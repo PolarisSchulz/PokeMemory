@@ -5,7 +5,7 @@ body {
   /* -webkit-perspective: 1000; */
 
   /* position: relative; */
-  background-image: url("../img/Background_Memory_Match.png");
+  background-image: url("./img/Background_Memory_Match.png");
   background-size: cover;
 }
 
@@ -20,7 +20,7 @@ h2 {
 header {
   display: flex;
   justify-content: center;
-  background-image: url("../img/ribbon.png");
+  background-image: url("./img/ribbon.png");
   background-size: cover;
 }
 
@@ -180,7 +180,7 @@ text-align: center;
   display: flex;
   justify-content: center;
   padding: 3vw;
-  background-image: url("../img/eeveeAndPikachu.png");
+  background-image: url("./img/eeveeAndPikachu.png");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
@@ -224,7 +224,7 @@ footer {
   /* background-color: blueviolet; */
   display: flex;
   justify-content: center;
-  background-image: url("../img/footer.png");
+  background-image: url("./img/footer.png");
   background-size: cover;
 }
 
